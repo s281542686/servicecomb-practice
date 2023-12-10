@@ -1,0 +1,10 @@
+servicecomb:
+  service:
+    application: servicecomb-practice
+    name: api-service
+    version: 0.0.1
+    registry:
+      address: http://127.0.0.1:30100
+
+  rest:
+    address: 127.0.0.1:8080

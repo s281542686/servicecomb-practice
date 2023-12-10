@@ -1,0 +1,33 @@
+servicecomb:
+  service:
+    application: servicecomb-practice
+    name: gateway-service
+    version: 0.0.1
+    registry:
+      address: http://127.0.0.1:30100
+
+  rest:
+    address: 127.0.0.1:18080
+
+  handler:
+    chain:
+      Consumer:
+        default: auth,loadbalance
+        service:
+          auth: loadbalance
+  edge:
+    filter:
+      addHeader:
+        # 开启 公共请求头保留功能。默认 false
+        enabled: true
+        # 要保留的公共请求头，以逗号隔开
+        allowedHeaders: external_1,external_2
+
+  http:
+    dispatcher:
+      edge:
+        default:
+          enabled: true
+          prefix: rest
+          withVersion: true
+          prefixSegmentCount: 1
