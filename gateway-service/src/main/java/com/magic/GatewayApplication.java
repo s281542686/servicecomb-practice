@@ -1,4 +1,4 @@
-package com.magic.boot;
+package com.magic;
 
 import org.apache.servicecomb.springboot2.starter.EnableServiceComb;
 import org.springframework.boot.WebApplicationType;

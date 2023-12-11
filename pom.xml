@@ -44,11 +44,6 @@
             <groupId>org.apache.servicecomb</groupId>
             <artifactId>registry-service-center</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.12.1</version>
-        </dependency>
     </dependencies>
 
     <build>
