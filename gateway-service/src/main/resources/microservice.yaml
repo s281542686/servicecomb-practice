@@ -15,6 +15,8 @@ servicecomb:
         default: auth,loadbalance
         service:
           auth: loadbalance
+
+
   edge:
     filter:
       addHeader:
@@ -23,6 +25,7 @@ servicecomb:
         # 要保留的公共请求头，以逗号隔开
         allowedHeaders: external_1,external_2
 
+#  网关路由配置
   http:
     dispatcher:
       edge:

@@ -6,9 +6,16 @@ servicecomb:
   service:
     application: servicecomb-practice
     name: api-service
-    version: 0.0.1
+    version: 0.0.2
     registry:
       address: http://127.0.0.1:30100
+
+#  servicecomb 也支持 @RestController 声明，等价于 @RestSchma(schemaId="服务的class名称")，
+#  这个功能可以简化用户将老的应用改造为 servicecomb 。建议用户使用@RestSchema显式声明schemaId，在管理 接口基本的配置项的时候，更加直观。
+#  不希望Java-Chassis扫描@RestController注解作为REST接口类处理
+  provider:
+    rest:
+      scanRestController: false
 
   rest:
     address: 0.0.0.0:9091

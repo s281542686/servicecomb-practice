@@ -19,10 +19,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class GatewayApplication {
 
     public static void main(String[] args) {
-        try {
-            new SpringApplicationBuilder().web(WebApplicationType.NONE).sources(GatewayApplication.class).run(args);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new SpringApplicationBuilder().web(WebApplicationType.NONE).sources(GatewayApplication.class).run(args);
     }
 }
