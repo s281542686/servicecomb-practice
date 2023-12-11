@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  */
 
-@RestSchema(schemaId = "apiController")
+@RestSchema(schemaId = "api")
 @RequestMapping(path = "/")
 public class ApiEndpoint {
     @GetMapping("/sayHello")

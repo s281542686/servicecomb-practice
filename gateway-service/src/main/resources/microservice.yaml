@@ -7,7 +7,7 @@ servicecomb:
       address: http://127.0.0.1:30100
 
   rest:
-    address: 127.0.0.1:18080
+    address: 127.0.0.1:9090
 
   handler:
     chain:
