@@ -19,10 +19,10 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(path = "/user/")
 public class UserEndpoint {
 
-    RestTemplate restTemplate = RestTemplateBuilder.create();
+    private RestTemplate restTemplate = RestTemplateBuilder.create();
 
     @GetMapping(path = "hello")
     public String helloUser(@RequestParam("name") String name){
-        return restTemplate.getForObject("cse://api-service/apiEndpoint/sayHello?name="+name,String.class);
+        return restTemplate.getForObject("cse://api-service/sayHello?name="+name,String.class);
     }
 }
