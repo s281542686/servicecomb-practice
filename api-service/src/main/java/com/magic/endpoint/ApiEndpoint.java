@@ -1,4 +1,4 @@
-package com.magic.boot.controller;
+package com.magic.endpoint;
 
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestSchema(schemaId = "apiController")
 @RequestMapping(path = "/")
-public class ProviderController {
+public class ApiEndpoint {
     @GetMapping("/sayHello")
     public String sayHello(@RequestParam("name") String name) {
         return "Hello " + name;
