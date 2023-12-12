@@ -9,13 +9,24 @@ servicecomb:
   rest:
     address: 127.0.0.1:9090
 
+  #网关路由配置，开启默认路由服务
+  http:
+    dispatcher:
+      edge:
+        default:
+          enabled: true
+          prefix: rest
+          withVersion: true
+          prefixSegmentCount: 1
+
+  #运行模型loadbalance负载均衡,消费端qps-flowcontrol限流
+  #由authentication-server服务提供auth认证，所以authentication-server服务本身不经过auth handler
   handler:
     chain:
       Consumer:
-        default: auth,loadbalance
+        default: auth,qps-flowcontrol-consumer,loadbalance
         service:
-          auth: loadbalance
-
+          authentication-server: qps-flowcontrol-consumer,loadbalance
 
   edge:
     filter:
@@ -25,12 +36,3 @@ servicecomb:
         # 要保留的公共请求头，以逗号隔开
         allowedHeaders: external_1,external_2
 
-#  网关路由配置
-  http:
-    dispatcher:
-      edge:
-        default:
-          enabled: true
-          prefix: rest
-          withVersion: true
-          prefixSegmentCount: 1

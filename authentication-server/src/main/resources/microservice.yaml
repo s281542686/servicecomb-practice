@@ -5,7 +5,7 @@ server:
 servicecomb:
   service:
     application: servicecomb-practice
-    name: api-service
+    name: authentication-server
     version: 0.0.1
     registry:
       address: http://127.0.0.1:30100
@@ -18,4 +18,4 @@ servicecomb:
       scanRestController: false
 
   rest:
-    address: 0.0.0.0:9091
+    address: 0.0.0.0:9093
