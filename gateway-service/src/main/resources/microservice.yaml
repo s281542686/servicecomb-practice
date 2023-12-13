@@ -30,13 +30,13 @@ servicecomb:
           prefixSegmentCount: 3
 
   #运行模型loadbalance负载均衡,消费端qps-flowcontrol限流
-  #由authentication-server服务提供auth认证，所以authentication-server服务本身不经过auth handler
+  #由authentication-server服务提供auth认证，所以配置指定authentication-server服务本身不经过auth handler
   handler:
     chain:
       Consumer:
-        default: auth,qps-flowcontrol-consumer,loadbalance
+        default: internalAccess,auth,qps-flowcontrol-consumer,loadbalance
         service:
-          authentication-server: qps-flowcontrol-consumer,loadbalance
+          authentication-server: internalAccess,qps-flowcontrol-consumer,loadbalance
 
   edge:
     filter:

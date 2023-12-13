@@ -1,5 +1,6 @@
 package com.magic.endpoint;
 
+import io.swagger.annotations.Api;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,4 +26,6 @@ public class UserEndpoint {
     public String helloUser(@RequestParam("name") String name){
         return restTemplate.getForObject("cse://api-service/api/"+name+"/sayHello?name="+name,String.class);
     }
+
+
 }

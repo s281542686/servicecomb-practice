@@ -1,3 +1,4 @@
 <config>
     <handler id="auth"  class="com.magic.handler.AuthHandler" />
+    <handler id="internalAccess"  class="com.magic.handler.InternalAccessHandler" />
 </config>
