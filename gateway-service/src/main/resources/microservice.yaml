@@ -29,7 +29,10 @@ servicecomb:
           withVersion: true
           prefixSegmentCount: 3
 
-  #运行模型loadbalance负载均衡,消费端qps-flowcontrol限流
+  #handler处理链
+#    消费方
+#       默认经过internalAccess,auth,qps-flowcontrol-consumer,loadbalance
+#       访问authentication-server服务时则经过internalAccess,qps-flowcontrol-consumer,loadbalance
   #由authentication-server服务提供auth认证，所以配置指定authentication-server服务本身不经过auth handler
   handler:
     chain:
