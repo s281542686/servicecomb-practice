@@ -17,7 +17,8 @@ import org.apache.servicecomb.swagger.invocation.exception.InvocationException;
 public class AuthHandler implements Handler {
     @Override
     public void handle(Invocation invocation, AsyncResponse asyncResponse) throws Exception {
-        String token = invocation.getContext("CONTEXT_HEADER_AUTHORIZATION");
+        String token = invocation.getRequestEx().getHeader("Authorization");
+        invocation.getRequestEx().getCookies();
         // 验证没有携带token，或者token校验失败
         if (token == null) {
             asyncResponse.consumerFail(new InvocationException(403, "forbidden", "not authenticated"));

@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestSchema(schemaId = "auth")
-@RequestMapping(path = "/")
+@RequestMapping(path = "/auth/")
 public class AuthenticationEndpoint {
 
-    @RequestMapping(path = "/auth/login")
+    @RequestMapping(path = "/login")
     public Boolean login(String username, String password){
         if(StringUtils.equals(username,"admin")&&StringUtils.equals(password,"admin")){
             return true;

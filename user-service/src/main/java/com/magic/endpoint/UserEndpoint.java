@@ -23,6 +23,6 @@ public class UserEndpoint {
 
     @GetMapping(path = "hello")
     public String helloUser(@RequestParam("name") String name){
-        return restTemplate.getForObject("cse://api-service/sayHello?name="+name,String.class);
+        return restTemplate.getForObject("cse://api-service/api/"+name+"/sayHello?name="+name,String.class);
     }
 }

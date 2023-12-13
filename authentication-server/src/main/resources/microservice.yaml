@@ -1,6 +1,6 @@
 # Spring Boot 配置
 server:
-  port: 9091  # 应与 servicecomb.rest.address 相同才能使用 Web 容器
+  port: 9093  # 应与 servicecomb.rest.address 相同才能使用 Web 容器
 
 servicecomb:
   service:

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 
 @RestSchema(schemaId = "api")
-@RequestMapping(path = "/")
+@RequestMapping(path = "/api/")
 public class ApiEndpoint {
 
     /*
