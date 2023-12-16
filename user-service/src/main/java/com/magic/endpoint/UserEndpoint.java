@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(path = "/user/")
 public class UserEndpoint {
 
-    private RestTemplate restTemplate = RestTemplateBuilder.create();
+    private final RestTemplate restTemplate = RestTemplateBuilder.create();
 
     @GetMapping(path = "hello")
     public String helloUser(@RequestParam("name") String name){

@@ -13,6 +13,7 @@
         <module>user-service</module>
         <module>api-service</module>
         <module>authentication-server</module>
+        <module>common</module>
     </modules>
 
     <properties>
