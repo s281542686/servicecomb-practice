@@ -18,7 +18,7 @@ import java.util.List;
 
 public class InternalAccessHandler implements Handler {
     /***
-     * 网关实现Hanlder，检查访问的接口是否具备定义的tags，如果具备，认为是内部接口，不允许访问。
+     * 网关实现Hanlder，检查访问的接口是否具备定义的tags，如果具备，认为是内部接口，不允许通过网关访问。
      * 检查接口是否定义了名称为”INTERNAL”的tags，如果包含，则不允许访问
      * @param invocation
      * @param asyncResp

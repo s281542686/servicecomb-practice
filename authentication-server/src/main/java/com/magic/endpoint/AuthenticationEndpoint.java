@@ -24,7 +24,7 @@ import java.util.UUID;
 
 @RestSchema(schemaId = "AuthenticationEndpoint")
 @RequestMapping(path = "/auth/")
-@Api(tags = {"INTERNAL"})
+//@Api(tags = {"INTERNAL"})
 public class AuthenticationEndpoint {
 
     Logger logger = LoggerFactory.getLogger(AuthenticationEndpoint.class);

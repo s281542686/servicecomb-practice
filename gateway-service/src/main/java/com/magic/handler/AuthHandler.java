@@ -37,7 +37,7 @@ public class AuthHandler implements Handler {
             asyncResponse.consumerFail(new InvocationException(403, "forbidden", "not authenticated"));
             return;
         }
-        invocation.addContext("isCheck","true");
+
         //edge service的定制逻辑，包括Dispatcher,Handler,HttpServerFilter等，均在事件派发线程event-loop中执行，
         //任何定制逻辑必须不能够存在阻塞逻辑，否则会导致edge service出现死锁。
         //死锁问题会在并发数大于event-loop线程数量的情况下出现。（event-loop线程数量默认是CPU核数的两倍， 可以通过 jstack 命令查看线程。）
