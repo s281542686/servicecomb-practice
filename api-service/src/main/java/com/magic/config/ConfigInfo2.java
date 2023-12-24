@@ -1,10 +1,6 @@
 package com.magic.config;
 
-import org.apache.servicecomb.config.inject.InjectProperties;
-import org.apache.servicecomb.config.inject.InjectProperty;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /***
@@ -15,10 +11,9 @@ import org.springframework.stereotype.Component;
  *
  */
 
-@Configuration()
-@ConfigurationProperties()
+@ConfigurationProperties(prefix = "aaa")
+@Component
 public class ConfigInfo2 {
-    @Value("${magic}")
     private String magic;
 
     public String getMagic() {
