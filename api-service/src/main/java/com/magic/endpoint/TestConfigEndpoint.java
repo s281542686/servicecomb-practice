@@ -1,6 +1,7 @@
 package com.magic.endpoint;
 
 import com.magic.config.ConfigInfo;
+import com.magic.config.ConfigInfo2;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,18 +23,27 @@ public class TestConfigEndpoint {
     @Autowired
     ConfigInfo configInfo;
 
-    //不会动态更新
+    @Autowired
+    ConfigInfo2 configInfo2;
+
+
     @Value("${magic}")
     private String magic;
 
+    //会动态更新
     @GetMapping(path = "testInjectProperties")
     public String testInjectProperties(){
         return configInfo.getMagic();
     }
-
+    //不会动态更新
     @GetMapping(path = "testValue")
     public String testValue() {
         return magic;
+    }
+    //不会动态更新
+    @GetMapping(path = "testConfigurationProperties")
+    public String testConfigurationProperties(){
+        return configInfo2.getMagic();
     }
 
 
