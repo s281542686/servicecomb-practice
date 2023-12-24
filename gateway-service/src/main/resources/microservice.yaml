@@ -49,3 +49,5 @@ servicecomb:
         # 要保留的公共请求头，以逗号隔开
         #allowedHeaders: external_1,external_2
 
+  #可以通过多种方式来扩展Edge Service的功能，包括Dispatcher、HttpServerFilter、Handler、HttpClientFilter（依次执行）
+

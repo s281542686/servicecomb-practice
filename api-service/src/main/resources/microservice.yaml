@@ -19,3 +19,21 @@ servicecomb:
 
   rest:
     address: 0.0.0.0:9091
+
+# 实现方式为通过apollo的开放平台，通过定时调用获取某个Namespace当前生效的已发布配置接口
+# http://{portal_address}/openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases/latest
+apollo:
+  config:
+    serverUri: http://127.0.0.1:8070
+    serviceName: api-service #AppId in apollo
+    env: DEV
+    #default clusters name in apollo,if user create new clusters please replace this setting value
+    #more detail can be found at https://github.com/ctripcorp/apollo/wiki
+    clusters: default
+    #default namespace name in apollo,if user create new namespace please replace this setting value
+    #more detail can be found at https://github.com/ctripcorp/apollo/wiki/Apollo%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B9%8B%E2%80%9CNamespace%E2%80%9D
+    namespace: application
+    token: d2ffd9d3de4fd583b129b4168ef4c23855d387c1c4ffdf268576c355ab9f728d #get token from Apollo web pages
+    firstRefreshInterval: 0 #dedefault value is 0
+    refreshInterval: 3 #dedefault value is 3
+

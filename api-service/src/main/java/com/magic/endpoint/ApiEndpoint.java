@@ -29,4 +29,5 @@ public class ApiEndpoint {
     public String sayHello(@PathVariable("path")String path, @RequestParam("name") String name) {
         return "Hello " + path +name;
     }
+
 }
